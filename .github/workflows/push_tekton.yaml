@@ -76,7 +76,7 @@ jobs:
           git config --global user.email "stakater@gmail.com"
           git config --global user.name "stakater-user"
           git add task/${{ inputs.HELM_PACKAGE_NAME }}/${{ inputs.HELM_PACKAGE_NAME }}.yaml
-          git commit -m "[skip ci] Add rendered and modified Helm chart"
+          git commit -m "[skip ci] Add rendered and modified Helm chart" || true
 
       - name: Push changes
         uses: ad-m/github-push-action@master

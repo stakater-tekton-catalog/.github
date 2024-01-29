@@ -32,7 +32,7 @@ jobs:
       - name: Generate Tag
         id: generate_tag
         run: |
-          version="$(git describe --tags --abbrev=0)"
+          version="$(git describe --tags --abbrev=0 || echo 0.0.0)"
           number="pr${{ github.event.pull_request.number }}"
           echo "GIT_TAG=$(echo ${version}-${number})" >> $GITHUB_OUTPUT
 

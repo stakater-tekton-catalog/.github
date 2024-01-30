@@ -68,7 +68,7 @@ jobs:
 
       - name: Render Helm Chart
         run: |
-          helm template ${{ inputs.HELM_PACKAGE_NAME }} helm > task/${{ inputs.HELM_PACKAGE_NAME }}/${{ inputs.HELM_PACKAGE_NAME }}.yaml
+          mkdir -p task/${{ inputs.HELM_PACKAGE_NAME }} && helm template ${{ inputs.HELM_PACKAGE_NAME }} helm > task/${{ inputs.HELM_PACKAGE_NAME }}/${{ inputs.HELM_PACKAGE_NAME }}.yaml
 
       - name: Commit Changes
         run: |
